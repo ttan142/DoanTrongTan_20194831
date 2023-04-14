@@ -1,2 +1,2 @@
 # DoanTrongTan_20194831
-#OOP Lab 2023
+# IT3100E - Object-oriented Programming
