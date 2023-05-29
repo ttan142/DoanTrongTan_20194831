@@ -1,0 +1,23 @@
+Q: Which classes are aggregates of other classes?
+A: - Class CompactDisc is the aggregate of class Track.
+   - Class Cart and Store are the aggregates of class Media.
+
+Q: If the passing object is not an instance of Media, what happens?
+A: The overridden equals(Object o) method will then return false.
+
+Q: Iterate through the list and print out the information of the media by using toString() method. Observe what happens and explain in detail. 
+A: The console prints out different information for different types of media, because the parent class
+(Media) has overridden toString() method from Object class, and the children classes (CompactDisc, DigitalVideoDisc, Book) also have overridden the toString() method from the class Media. Therefore when we iterate through the list, it will call the toString() method with respect to the class of the object that it iterates over.
+
+Q: What class should implement the Comparable interface?
+A: The Comparable interface should be implemented by the class that contains the comparison object like Media class.
+
+Q: In those classes, how should you implement the compareTo()method be to reflect the ordering that we want?
+A: We could implement the compareTo() method to compare title or price or whatever we want.
+
+Q: Can we have two ordering rules of the item (by title then cost and by cost then title) if we use this Comparable interface approach?
+A: Yes, we can do this with two distinct implementations of the Comparable interface. In one approach, the items would be sorted by title, then by cost. The alternate approach would sort the items by price, followed by title.
+
+Q: Suppose the DVDs has a different ordering rule from the other media types, that is by title, then decreasing length, then cost. How would you modify your code to allow this?
+A: To allow DVDs to have a different ordering rule from the other media types. The DVD class would override the compareTo() method to sort the DVDs by title, then decreasing length, then cost.
+
